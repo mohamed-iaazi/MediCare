@@ -47,6 +47,7 @@ L'application **DoctorRV** permet aux patients de réserver et gérer leurs rend
 
 ## 📸 Screenshots & Diagrammes UML  
 📍 **(À compléter avec les images des diagrammes UML : Use Case, Classe, Séquence)**  
+<img width="409" alt="image" src="https://github.com/user-attachments/assets/cb39c010-560f-4aca-8013-6d402f2d30ba" />
 
 ---
 
