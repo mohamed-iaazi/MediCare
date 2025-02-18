@@ -20,7 +20,8 @@
         
     }
     header{
-        background-color: #09609646;
+        /* background-color: #09609646; */
+        background-color: #209f8658;
     }
 .card{
     width: 300px;
@@ -44,14 +45,15 @@ form div {
 }
  button {
     background-color: #209F85;
-    border: none;
+    border: 1px transparent solid;
     border-radius: 4px;
     padding: 8px 10px;
+    margin-bottom: 10px;
 }
 
 .back {
     height: 100vh;
-    background: linear-gradient(to top, #209f86be, #096096a5), url('../images/img.jpg') no-repeat top center ;
+    background: linear-gradient(to top, #209f86be, #096096a5), url('../images/img.png') no-repeat top center ;
     background-size: cover;
 
 
@@ -83,9 +85,25 @@ p{
 button:hover{
     color: #209F85;
     background-color: white;
+    border: #209F85 solid 0.1px;
+
 }
 .discover:hover{
     background-color: #209F85;
     color: white;
+    
+
+    
 }
 
+footer {
+    background-color: #09609646;
+    color: white;
+    height: 100px;
+}
+span{
+    color: #209F85;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: var(--font);
+}

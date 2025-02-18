@@ -53,10 +53,9 @@
         <h1>Providing An Exeptional <br> Patient Experience</h1>
 <div class="row me-0">
     <div class="card p-3  col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <form  >
+        <form  action="insert"  method="post">
             <div class="ms-auto me-auto ">
-                
-             
+                   
               <input class="mt-3" type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="User Name">
               <input class="mt-3" type="email" class="form-control" id="email" name="email" placeholder="Email">
               <input class="mt-3" type="password" class="form-control" id="password" name="password" placeholder="Password">
@@ -82,6 +81,10 @@
 </div>
 
     </section>
+    <footer class="d-flex justify-content-center align-items-center ">
+        <p>CopyRight &copy; 2025 <span>Made By Medo</span></p>
+
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
