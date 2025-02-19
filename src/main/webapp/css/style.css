@@ -3,34 +3,34 @@
     --text-lightBlack-color: #383636;
     --green-btn-color:#29AA2B;
     --font:'Segoe UI', Tahoma, Verdana, sans-serif;
-    }
+}
 
-    button {
-        padding: 4px 10px;
-        border: #09609646 2px solid;
-        background-color: var(--blue);
-        color: white;
-        font-size: 13px;
-    }
-    .line{
-        background-color: var(--blue);
-        height: 2px;
-        opacity: 0.05;
-        width: 99%;
-        
-    }
-    header{
-        /* background-color: #09609646; */
-        background-color: #209f8658;
-    }
+button {
+    padding: 4px 10px;
+    border: #09609646 2px solid;
+    background-color: var(--blue);
+    color: white;
+    font-size: 13px;
+}
+.line{
+    background-color: var(--blue);
+    height: 2px;
+    opacity: 0.05;
+    width: 99%;
+
+}
+header{
+    /* background-color: #09609646; */
+    background-color: #209f8658;
+}
 .card{
     width: 300px;
     /* position: relative;
     top: 20%;
     left: 10%; */
-  margin-left: 10%;
+    margin-left: 10%;
 }
-   
+
 input ,select , option{
     padding: 4px 6px;
     outline: #E7F7F4 solid 2px;
@@ -43,7 +43,7 @@ input ,select , option{
 form div {
     width: 250px;
 }
- button {
+button {
     background-color: #209F85;
     border: 1px transparent solid;
     border-radius: 4px;
@@ -53,7 +53,7 @@ form div {
 
 .back {
     height: 100vh;
-    background: linear-gradient(to top, #209f86be, #096096a5), url('../images/img.png') no-repeat top center ;
+    background: linear-gradient(to top, #209f86be, #096096a5), url('../images/img.jpg') no-repeat top center ;
     background-size: cover;
 
 
@@ -91,9 +91,9 @@ button:hover{
 .discover:hover{
     background-color: #209F85;
     color: white;
-    
 
-    
+
+
 }
 
 footer {
