@@ -4,7 +4,13 @@
     Author     : iaazi
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +45,7 @@
                     </li>
                 </ul>
                 <section class="d-flex justify-content-end w-75">
-                    <button class="m-2 rounded-1 btn-signup">Take Appointement</button>
+                    <button class="m-2 rounded-1 btn-signup" > <a href="">Take Appointement</a> </button>
                     <button class="m-2 rounded-1 btn-login">Login</button>
                 </section>
             </div>
@@ -48,19 +54,20 @@
 </header>
 <div class="line ms-auto me-auto"></div>
 
+
 <section class="back d-block">
 
     <h1>Providing An Exeptional <br> Patient Experience</h1>
     <div class="row me-0">
         <div class="card p-3  col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <form  action="save"  method="post">
+            <form  action="insert"  method="post">
                 <div class="ms-auto me-auto ">
 
                     <input class="mt-3" type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="User Name">
                     <input class="mt-3" type="email" class="form-control" id="email" name="email" placeholder="Email">
                     <input class="mt-3" type="date" id="day" name="date" placeholder="Choose A day">
-                    <select class="d-block mt-3" aria-label="Default select">
-                        <option selected name="doctor" disabled>select doctor</option>
+                    <select name="doctor" class="d-block mt-3" aria-label="Default select">
+                        <option selected  disabled>select doctor</option>
                         <option value="mohamed">Mr Mohamed</option>
                         <option value="kamal">Mr kamal</option>
                         <option value="issam">Mr issam</option>

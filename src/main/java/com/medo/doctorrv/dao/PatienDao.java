@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class PatienDao {
 
-    private  String url ="jdbc:mysql://localhost:3306/DoctorDb?useSSL=false";
+    private  String url ="jdbc:mysql://localhost:3306/doctordb?useSSL=false";
     private  String user="root";
     private  String password="root";
     private  String INSERT_PATIEN="insert into patien" + "  (username,email,date,doctor)values"+" (?,?,?,?)";
@@ -21,6 +21,8 @@ protected Connection getconection() throws SQLException {
     Connection connection= null;
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
+
+
         try {
             connection = DriverManager.getConnection(url, user, password);
 

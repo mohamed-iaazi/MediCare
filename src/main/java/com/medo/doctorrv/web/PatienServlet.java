@@ -23,25 +23,22 @@ public class PatienServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String action = req.getParameter("action");
+        String action=req.getServletPath();
 
-        if (action == null) {
-                action = "home";
-        }
         try {
 
 
             switch (action) {
-                case "/save":
+                case "/insert":
 
                     insertPatien(req, resp);
-                    System.out.println("save success");
-
+                    System.out.println("insert called success");
                     break;
                 default:
-
+                    System.out.println("home loaded");
                     RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
                     dispatcher.forward(req, resp);
+
 
                     break;
 
@@ -60,16 +57,15 @@ public class PatienServlet extends HttpServlet {
 
     private void insertPatien(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
 
-
-
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         Date address = Date.valueOf(req.getParameter("date"));
-        String phone = req.getParameter("doctor");
-
-        Patient patien = new Patient(username,email,address,phone);
+        String doctor = req.getParameter("doctor");
+        Patient patien = new Patient(username,email,address,doctor);
         patienDao.insertPatien(patien);
-        resp.sendRedirect("./");
+
+        resp.sendRedirect("./?success=1");
+
 
     }
 
