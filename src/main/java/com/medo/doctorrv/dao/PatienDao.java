@@ -2,22 +2,22 @@ package com.medo.doctorrv.dao;
 
 import com.medo.doctorrv.model.Patient;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PatienDao {
 
     private  String url ="jdbc:mysql://localhost:3306/doctordb?useSSL=false";
     private  String user="root";
     private  String password="root";
-    private  String INSERT_PATIEN="insert into patien" + "  (username,email,date,doctor)values"+" (?,?,?,?)";
+    private  String INSERT_PATIEN="insert into patien  (username,email,date,doctor)values (?,?,?,?)";
+    private  String SELECT_ALL="select * from  patien";
 
 
 
 
-protected Connection getconection() throws SQLException {
+    protected Connection getconection() throws SQLException {
     Connection connection= null;
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -48,6 +48,33 @@ public void  insertPatien(Patient patient) throws SQLException{
     } catch (Exception e) {
         throw new RuntimeException(e);
     }
+
+}
+
+
+public List<Patient> selectAll(){
+
+        List<Patient> patients= new ArrayList<>();
+        try (Connection connection=getconection();PreparedStatement preparedStatement=connection.prepareStatement(SELECT_ALL)) {
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String username= resultSet.getString("username");
+                String email= resultSet.getString("email");
+                Date date= resultSet.getDate("date");
+                String doctor= resultSet.getString("doctor");
+                patients.add(new Patient(username,email,date,doctor));
+
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return patients;
 
 }
 

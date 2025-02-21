@@ -1,5 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/menu.css">
 </head>
 <style>
     .card{
@@ -34,6 +39,7 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         padding: 10px;
     }
+
 
     label{
         color: #073c58;
@@ -67,28 +73,69 @@
     }
 </style>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand h1 mb-0 " href="#">DocotrRv</a>
+
+            <!-- Navbar toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse ps-3" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="appointement">Appointement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                </ul>
+                <section class="d-flex justify-content-end w-75">
+                    <button class="m-2 rounded-1 btn-signup" > Take Appointement</button>
+                    <button class="m-2 rounded-1 btn-login" href="login"  >
+                        <a id="login" class="nav-link" href="loginForm">Login</a>
+
+
+                    </button>
+                </section>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="back">
 <h1>Appointement </h1>
 
 
-<section>
-    <c:forEach var="patien" >
-        
+
+
+
+
+    <jsp:useBean id="patients" scope="request" type="java.util.List"/>
+    <c:forEach var="patient" items="${patients}"   >
+
     <div class="card">
         <div>
             <div class="ca">
-                <span>UserName :  <small>${patien.username}</small> </span>
+                <span>UserName :  <small>${patient.name
+                }</small> </span>
                 <span></span>
 
             </div>
 
             <div class="ca">
-                <span>Email : <small>${patien.email}</small></span>
+                <span>Email : <small>${patient.email}</small></span>
                 <span></span>
 
             </div>
 
             <div class="ca">
-                <span>Date :  <small>${patien.date}</small> </span>
+                <span>Date :  <small>${patient.date}</small> </span>
                 <span></span>
 
             </div>
@@ -116,6 +163,7 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 </body>
