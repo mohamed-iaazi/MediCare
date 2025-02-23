@@ -50,6 +50,7 @@ L'application **DoctorRV** permet aux patients de réserver et gérer leurs rend
 <img width="418" alt="image" src="https://github.com/user-attachments/assets/40a993c3-bdcb-4238-952b-ac6563cd3524" />
 <img width="424" alt="image" src="https://github.com/user-attachments/assets/1975b73b-6c20-4865-a97f-5ad6d6977086" />
 
+![diagram](https://github.com/user-attachments/assets/4e685bb9-e580-4fdb-98fd-cb9ce3acfd1e)
 
 ---
 
