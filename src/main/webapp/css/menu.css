@@ -4,9 +4,9 @@ header{
 }
 
 
-header button {
+button {
     background-color: #0a58ca;
-    border: 1px transparent solid;
+    border: #09609646 2px solid;
     border-radius: 4px;
     padding: 8px 10px;
     margin-bottom: 10px;
@@ -16,6 +16,11 @@ header button {
     height: 100vh;
     background: linear-gradient(to top, rgba(0, 37, 246, 0.29), rgba(52, 167, 245, 0.65)), url('../images/img.jpg') no-repeat top center ;
     background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
 
 
 
@@ -28,3 +33,38 @@ header button {
     text-align: center;
 
 }
+
+
+span{
+    color: #898886;
+    font-size: 12px;
+    font-weight: bolder;
+
+}
+small{
+    color: #080807;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+}
+
+
+label{
+    color: #073c58;
+    font-size: 12px;
+}
+.card button{
+    width: 90px;
+    display: block;
+    height: fit-content;
+    padding: 6px 10px;
+    border-radius: 50px;
+}
+.ca{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+

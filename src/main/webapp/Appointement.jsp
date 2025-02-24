@@ -1,9 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,65 +8,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointement</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/menu.css">
+
 </head>
+
+
 <style>
+    :root {
+        --blue : #096096;
+        --text-lightBlack-color: #383636;
+        --font:'Segoe UI', Tahoma, Verdana, sans-serif;
+    }
+
+    button {
+        padding: 4px 10px;
+        border: #09609646 2px solid;
+        background-color: var(--blue);
+        color: white;
+        font-size: 13px;
+    }
+    .line{
+        background-color: var(--blue);
+        height: 2px;
+        opacity: 0.05;
+        width: 99%;
+
+    }
+    header{
+        /* background-color: #09609646; */
+        background-color: rgb(255, 255, 255);
+    }
     .card{
+        width: 300px;
+        /* position: relative;
+        top: 20%;
+        left: 10%; */
+        margin-left: 10%;
+    }
+
+    input ,select , option{
+        padding: 4px 6px;
+        outline: #26caf326 solid 2px;
+        background-color:#26caf326;
+        border: none;
+        border-radius: 4px;
+        color: #8d8b8b;
+        width: 250px;
+    }
+    form div {
+        width: 250px;
+    }
+    button {
+        background-color: #0a58ca;
+        border: 1px transparent solid;
+        border-radius: 4px;
+        padding: 8px 10px;
+        margin-bottom: 10px;
+    }
+
+    .back {
+        background: linear-gradient(to top, rgba(0, 37, 246, 0.29), rgba(52, 167, 245, 0.65)), url('https://i.ibb.co/9HjLLFdm/img.jpg') no-repeat top center ;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 100vh;
+        justify-content: space-evenly;
+        gap: 10px;
+
+    }
+    .back h1 {
+        color: white;
+        font-size: 30px;
+        padding: 20px 10px;
+        font-weight: bolder;
+        text-align: center;
+        position: absolute;
+
+
+    }
+    p{
+        text-align: center;
+        color: white;
+    }
+    .discover{
+        background-color: white;
+        color: rgba(52, 167, 245, 0.65);
+        border: rgba(52, 167, 245, 0.65) 1.5px solid;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 10px 0;
+        margin-bottom: 10px;
+    }
+    button:hover{
+        color: rgba(52, 167, 245, 0.65);
+        background-color: white;
+        border: rgba(52, 167, 245, 0.65) solid 0.1px;
+
+    }
+    .discover:hover{
+        background-color: rgba(52, 167, 245, 0.65);
+        color: white;
+
+
+
+    }
+
+    footer {
+        background-color: #09609646;
+        color: white;
+        height: 100px;
+    }
+    span{
+        color: rgba(0, 37, 246, 0.29);
+        font-size: 10px;
+        font-weight: bold;
+        font-family: var(--font), cursive;
+    }
+
+
+    .cards{
         border: solid 1px rgba(52, 80, 223, 0.295);
+        background: white;
         width: fit-content;
-        height: 70px;
         border-radius: 5px;
         box-shadow: 0 0 10px 0 rgb(241, 235, 235);
         padding: 10px;
         display: flex;
-        gap: 40px;
-        align-items: center;
-        border-bottom: #0ecfff solid 10px;
-
-    }
-    span{
-        color: #898886;
-        font-size: 12px;
-        font-weight: bolder;
-
-    }
-    small{
-        color: #080807;
-        /* font-family: 'Courier New', Courier, monospace; */
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        padding: 10px;
-    }
-
-
-    label{
-        color: #073c58;
-        font-size: 12px;
-    }
-    button{
-        width: 90px;
-        display: block;
-        height: fit-content;
-        padding: 6px 10px;
-        border-radius: 50px;
-    }
-    .ca{
-
-        display: flex;
-        flex-direction: column;
         gap: 10px;
-
-    }
-    section {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
         align-items: center;
-        gap: 20px;
-    }
-    h1{
+        height: fit-content;
+        margin-top: 80px;
 
-        text-align: center;
-        color: #073c58;
     }
 </style>
 <body>
@@ -96,7 +166,7 @@
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                 </ul>
-                <section class="d-flex justify-content-end w-75">
+                <section class="btns d-flex justify-content-end w-75">
                     <button class="m-2 rounded-1 btn-signup" > Take Appointement</button>
                     <button class="m-2 rounded-1 btn-login" href="login"  >
                         <a id="login" class="nav-link" href="loginForm">Login</a>
@@ -117,9 +187,11 @@
 
 
     <jsp:useBean id="patients" scope="request" type="java.util.List"/>
+
+
     <c:forEach var="patient" items="${patients}"   >
 
-    <div class="card">
+    <div class="cards list">
         <div>
             <div class="ca">
                 <span>UserName :  <small>${patient.name

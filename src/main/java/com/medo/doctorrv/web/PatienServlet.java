@@ -36,7 +36,8 @@ public class PatienServlet extends HttpServlet {
                     insertPatien(req, resp);
                     System.out.println("insert called success");
                     break;
-                case  "/appointement":
+                case  "/appointment":
+                    System.out.println("appointment called");
                     list(req,resp);
                     break;
                 case  "/loginForm":
@@ -46,7 +47,7 @@ public class PatienServlet extends HttpServlet {
 
                         case  "/login":
                             System.out.println("login called success");
-                            list(req,resp);
+                            login(req,resp);
                             break;
                 default:
                     System.out.println("home loaded");
@@ -68,7 +69,7 @@ public class PatienServlet extends HttpServlet {
         List<Patient> patients =patienDao.selectAll();
         System.out.println(patients.size());
         req.setAttribute("patients", patients);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("Appointement.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/Appointement.jsp");
         requestDispatcher.forward(req, resp);
 
 
@@ -91,6 +92,16 @@ public class PatienServlet extends HttpServlet {
         resp.sendRedirect("./?success=1");
 
 
+    }
+
+    private  void  login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+
+        if (email != null || password != null) {
+
+
+        }
     }
 
 
