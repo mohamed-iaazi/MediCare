@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -25,6 +26,8 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         if (LoginService.login(username,password)) {
+            HttpSession session = req.getSession();
+            session.setAttribute("user", username);
             resp.setContentType("text/html;charset=utf-8");
             resp.getWriter().write("success");
         }

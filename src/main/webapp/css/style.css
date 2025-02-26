@@ -121,3 +121,11 @@ span{
     border-bottom: #0ecfff solid 10px;
 
 }
+
+.btn-logout{
+    border: none;
+    color: #383636;
+    font-size: 20px;
+    font-weight: bolder;
+
+}

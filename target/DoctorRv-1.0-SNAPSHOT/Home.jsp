@@ -45,9 +45,7 @@
                 </ul>
 
                 <%
-                    HttpServletRequest httpServletRequest=(HttpServletRequest)  request;
-                    HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-                    if (httpServletRequest.getSession().getAttribute("user")==null){
+                    if (((HttpServletRequest)  request).getSession().getAttribute("user")==null){
 
                        System.out.println("The user is null");
 
@@ -59,17 +57,23 @@
                         <a id="register" class="nav-link" href="Register.jsp">Register</a>
                     </button>
                     <button class="m-2 rounded-1 btn-login" href="login"  >
-                        <a id="login" class="nav-link" href="loginForm">login</a>
+                        <a id="login" class="nav-link" href="Login.jsp">login</a>
 
 
                     </button>
                 </section>
 
-                <% }
+                <% } else { %>
+                <section class="btns d-flex justify-content-end w-75">
+                    <button class="m-2 rounded-1 btn-logout" >
+                        <a id="logout" class="nav-link" href="<% %>">logout</a>
+                    </button>
+
+                </section>
+
+                <% }%>
 
 
-
-                %>
             </div>
         </div>
     </nav>

@@ -181,7 +181,7 @@
             <h1 class="text-center p-1 text-dark">Login</h1>
             <h4 class="text-center h6  text-secondary">DoctorRv</h4>
 
-            <input required class="mt-3" type="text" id="username" name="username" aria-describedby="email" placeholder="User email">
+            <input required class="mt-3" type="text" id="username" name="username" aria-describedby="username" placeholder="User name">
             <input required class="mt-3" type="password" id="password" name="password" placeholder="Password">
         </div>
 
