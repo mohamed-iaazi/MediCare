@@ -5,15 +5,18 @@
         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
         version="6.0">
     <servlet>
-        <servlet-name>PatienServlet</servlet-name>
-        <servlet-class>com.medo.doctorrv.web.PatienServlet</servlet-class>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>com.medo.doctorrv.controller.Main</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>PatienServlet</servlet-name>
-        <url-pattern>/PatienServlet</url-pattern>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/Home</url-pattern>
+        <url-pattern>/images/*</url-pattern>
+        <url-pattern>/css/*</url-pattern>
+        <url-pattern>/js/*</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>PatienServlet</welcome-file>
+        <welcome-file>Main</welcome-file>
     </welcome-file-list>
 </web-app>

@@ -158,7 +158,7 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="appointement">Appointement</a>
+                        <a class="nav-link" href="Home.jsp">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
@@ -166,7 +166,7 @@
                 </ul>
                 <section class="d-flex justify-content-end w-75">
                     <button class="m-2 rounded-1 btn-signup" >
-                        <a id="login" class="nav-link" href="./">  Take Appointement</a>
+                        <a id="login" class="nav-link" href="Register.jsp">Register</a>
                       </button>
                 </section>
             </div>

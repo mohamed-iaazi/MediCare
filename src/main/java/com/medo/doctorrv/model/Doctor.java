@@ -3,15 +3,23 @@ package com.medo.doctorrv.model;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Doctor {
+public class Doctor extends  User
+{
     private int id;
-    private String name;
-    private  ArrayList<Appointement> Appointements;
+    private String specialisation;
 
-    public Doctor(int id, String name, ArrayList<Appointement> appointements) {
+    public Doctor(int id,String fullame, String email, String password, int numberPhone, String specialisation) {
+        super(fullame, email, password, numberPhone);
         this.id = id;
-        this.name = name;
-        Appointements = appointements;
+        this.specialisation = specialisation;
+    }
+
+    public Doctor(String fullame, String email, String password, int numberPhone, String specialisation) {
+        super(fullame, email, password, numberPhone);
+        this.specialisation = specialisation;
+    }
+
+    public Doctor() {
     }
 
     public int getId() {
@@ -22,19 +30,11 @@ public class Doctor {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSpecialisation() {
+        return specialisation;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Appointement> getAppointements() {
-        return Appointements;
-    }
-
-    public void setAppointements(ArrayList<Appointement> appointements) {
-        Appointements = appointements;
+    public void setSpecialisation(String specialisation) {
+        this.specialisation = specialisation;
     }
 }

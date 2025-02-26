@@ -11,7 +11,6 @@
 
 </head>
 
-
 <style>
     :root {
         --blue : #096096;
@@ -160,16 +159,18 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="appointement">Appointement</a>
+                        <a class="nav-link" href="appointement">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                 </ul>
                 <section class="btns d-flex justify-content-end w-75">
-                    <button class="m-2 rounded-1 btn-signup" > Take Appointement</button>
+                    <button class="m-2 rounded-1 btn-signup" >
+                        <a id="register" class="nav-link" href="Register.jsp">Register</a>
+                    </button>
                     <button class="m-2 rounded-1 btn-login" href="login"  >
-                        <a id="login" class="nav-link" href="loginForm">Login</a>
+                        <a id="login" class="nav-link" href="Login.jsp">login</a>
 
 
                     </button>

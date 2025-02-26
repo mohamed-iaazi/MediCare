@@ -13,7 +13,7 @@ public class ConnectionUtils {
     private static final   String driver="com.mysql.jdbc.Driver";
 
 
-    public static Connection Connection() {
+    public static Connection geConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
