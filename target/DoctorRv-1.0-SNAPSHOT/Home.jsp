@@ -65,15 +65,20 @@
 
                 <% } else { %>
                 <section class="btns d-flex justify-content-end w-75">
-                    <button class="m-2 rounded-1 btn-logout" >
-                        <a id="logout" class="nav-link" href="<% %>">logout</a>
+                    <button class="m-2  btn-logout" >
+                        <a id="logoutt" class="nav-link" href="<% %>">logout</a>
                     </button>
 
                 </section>
 
                 <% }%>
 
+                <section class="btns d-flex justify-content-end w-75">
+                    <button class="m-2  btn-logout" >
+                        <a id="logout" class="nav-link" href="<% %>">logout</a>
+                    </button>
 
+                </section>
             </div>
         </div>
     </nav>

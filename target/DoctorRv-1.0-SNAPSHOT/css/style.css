@@ -124,8 +124,14 @@ span{
 
 .btn-logout{
     border: none;
-    color: #383636;
-    font-size: 20px;
+    color: #a19e9e;
+    font-size: 14px;
     font-weight: bolder;
+    background: none;
 
+
+
+}
+.btn-logout:hover{
+    border: none;
 }
