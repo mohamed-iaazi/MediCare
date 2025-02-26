@@ -180,10 +180,10 @@
             <div class="ms-auto me-auto ">
                 <h1 class="text-center p-1 text-dark">Register</h1>
                 <h4 class="text-center h6  text-secondary">DoctorRv</h4>
-                <input class="mt-3" type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="UserName">
-                <input class="mt-3" type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter  email">
-                <input class="mt-3" type="number" class="form-control" id="numberPhone" name="numberPhone" aria-describedby="numberPhone" placeholder="numberPhone">
-                <input  class="mt-3" type="password" id="password" name="password" placeholder="Password">
+                <input required class="mt-3" type="text"  id="username" name="username" aria-describedby="username" placeholder="UserName">
+                <input required class="mt-3" type="email"  id="email" name="email" aria-describedby="email" placeholder="Enter  email">
+                <input  class="mt-3" type="number"  id="numberPhone" name="numberPhone" aria-describedby="numberPhone" placeholder="numberPhone">
+                <input  required  class="mt-3" type="password" id="password" name="password" placeholder="Password">
             </div>
 
             <button  class="mt-4 me-2 d-block ms-auto me-auto " type="submit">Register</button>

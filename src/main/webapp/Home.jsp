@@ -40,12 +40,20 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="appointment">Appointement</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="Appointement">Appointement</a>
                     </li>
                 </ul>
+
+                <%
+                    HttpServletRequest httpServletRequest=(HttpServletRequest)  request;
+                    HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+                    if (httpServletRequest.getSession().getAttribute("user")==null){
+
+                       System.out.println("The user is null");
+
+
+                %>
+
                 <section class="btns d-flex justify-content-end w-75">
                     <button class="m-2 rounded-1 btn-signup" >
                         <a id="register" class="nav-link" href="Register.jsp">Register</a>
@@ -56,6 +64,12 @@
 
                     </button>
                 </section>
+
+                <% }
+
+
+
+                %>
             </div>
         </div>
     </nav>

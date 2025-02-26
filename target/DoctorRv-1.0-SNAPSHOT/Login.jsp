@@ -176,13 +176,13 @@
 
 <section class="back d-block pt-5">
 <div class="card pt-5 d-block ms-auto me-auto   ">
-    <form  action="login"  method="post">
+    <form  action="Login"  method="post">
         <div class="ms-auto me-auto ">
             <h1 class="text-center p-1 text-dark">Login</h1>
             <h4 class="text-center h6  text-secondary">DoctorRv</h4>
 
-            <input class="mt-3" type="text" class="form-control" id="username" name="email" aria-describedby="email" placeholder="User email">
-            <input  class="mt-3" type="password" id="password" name="password" placeholder="Password">
+            <input required class="mt-3" type="text" id="username" name="username" aria-describedby="email" placeholder="User email">
+            <input required class="mt-3" type="password" id="password" name="password" placeholder="Password">
         </div>
 
         <button  class="mt-4 me-2 d-block ms-auto me-auto " type="submit">Login</button>
