@@ -1,6 +1,5 @@
 package com.medo.doctorrv.controller;
 
-import com.medo.doctorrv.dao.LoginDao;
 import com.medo.doctorrv.service.LoginService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebServlet("/Login")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
     @Override
@@ -25,16 +24,21 @@ public class LoginServlet extends HttpServlet {
 
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+
         if (LoginService.login(username,password)) {
             HttpSession session = req.getSession();
             session.setAttribute("user", username);
-            resp.setContentType("text/html;charset=utf-8");
-            resp.getWriter().write("success");
+            resp.setStatus(1);
+            resp.sendRedirect(req.getContextPath()+"/");
         }
         else {
-            resp.setContentType("text/html;charset=utf-8");
-            resp.getWriter().write("fail");
+            resp.setStatus(0);
+            resp.sendRedirect(req.getContextPath()+"/Login.jsp");
+
         }
 
     }
+
+
 }
+

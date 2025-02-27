@@ -176,7 +176,7 @@
 
 <section class="back d-block pt-5">
 <div class="card pt-5 d-block ms-auto me-auto   ">
-    <form  action="Login"  method="post">
+    <form  action="LoginServlet"  method="post">
         <div class="ms-auto me-auto ">
             <h1 class="text-center p-1 text-dark">Login</h1>
             <h4 class="text-center h6  text-secondary">DoctorRv</h4>

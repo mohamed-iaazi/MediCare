@@ -66,8 +66,10 @@
                 <% } else { %>
                 <section class="btns d-flex justify-content-end w-75">
                     <button class="m-2  btn-logout" >
-                        <a id="logoutt" class="nav-link" href="<% %>">logout</a>
+                        <a id="logoutt" class="nav-link" href="<% ((HttpServletRequest) request).getSession().removeAttribute("user");%> " onclick="logout()">logout</a>
                     </button>
+
+
 
                 </section>
 
@@ -117,7 +119,14 @@
 
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
 
+    function logout() {
+
+        alert("Logout with suess")
+
+    }
+</script>
 
 </body>
 </html>

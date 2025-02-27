@@ -13,10 +13,7 @@ public class LoginService {
         }
 
         else {
-
-
-
-            return LoginDao.getUserDatabase(email, password);
+            return LoginDao.getUserByUsernameAndPassword(email, password);
 
         }
 

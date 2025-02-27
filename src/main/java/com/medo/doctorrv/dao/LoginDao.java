@@ -1,6 +1,5 @@
 package com.medo.doctorrv.dao;
 
-import com.medo.doctorrv.model.User;
 import com.medo.doctorrv.utils.ConnectionUtils;
 
 import java.sql.Connection;
@@ -9,32 +8,28 @@ import java.sql.ResultSet;
 
 public class LoginDao {
 
-    final static   private  String SELECT_BY_USER = "select * from user ";
+    final static   private  String SELECT_BY_USER = "select * from user where username = ?";
 
-    public  static boolean getUserDatabase(String username , String password) {
-
-
-
+    public  static boolean getUserByUsernameAndPassword(String username , String password) {
 
             try (Connection connection= ConnectionUtils.geConnection(); PreparedStatement preparedStatement=connection.prepareStatement(SELECT_BY_USER)) {
 
-                ResultSet resultSet=preparedStatement.executeQuery();
+                preparedStatement.setString(1,username);
 
-                while (resultSet.next()) {
-                    if (resultSet.getString("username").equals(username) && resultSet.getString("password").equals(password)) {
+                try(ResultSet resultSet=preparedStatement.executeQuery()) {
 
-                        System.out.println(resultSet.getString("username")+"suucess" +"local user name is "+username);
-                        return true;
+                    System.out.println(resultSet+username+password);
 
+                    if ((resultSet.next())){
 
+                        String pass=resultSet.getString("password");
+                        System.out.println("return "+password.equals(pass));
+                        return password.equals(pass);
                     }
+
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
-
-
-
-
-
-
 
             } catch (Exception e) {
                 throw new RuntimeException(e);
