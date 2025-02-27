@@ -1,13 +1,25 @@
 package com.medo.doctorrv.model;
 
-public class User {
-    private String fullame;
+public abstract class User {
+    private  int id;
+    private String username;
     private String email;
     private String password;
     private int numberPhone;
+    private  Role role;
 
-    public User(String fullame, String email, String password, int numberPhone) {
-        this.fullame = fullame;
+
+    public User(String fullame, String email, String password, int numberPhone, Role role) {
+        this.username = fullame;
+        this.email = email;
+        this.password = password;
+        this.numberPhone = numberPhone;
+        this.role = role;
+    }
+
+    public User(int id, String fullame, String email, String password, int numberPhone) {
+        this.id = id;
+        this.username = fullame;
         this.email = email;
         this.password = password;
         this.numberPhone = numberPhone;
@@ -16,12 +28,30 @@ public class User {
     public User() {
     }
 
-    public String getFullame() {
-        return fullame;
+    public Role getRole() {
+        return role;
     }
 
-    public void setFullame(String fullame) {
-        this.fullame = fullame;
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {

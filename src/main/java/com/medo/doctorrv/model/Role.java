@@ -1,7 +1,6 @@
 package com.medo.doctorrv.model;
 
-public class Role {
-
+public class Role  {
     String Type;
 
     public Role(String type) {

@@ -23,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
 
         if (role.equals("Doctor")) {
             String specialization = req.getParameter("specialization");
-            Doctor doctor = new Doctor(username,password,email,numberPhone,specialization);
+            Doctor doctor = new Doctor(1,username,password,email,numberPhone,1,specialization);
 
 
         }

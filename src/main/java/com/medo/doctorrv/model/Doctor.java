@@ -8,14 +8,20 @@ public class Doctor extends  User
     private int id;
     private String specialisation;
 
-    public Doctor(int id,String fullame, String email, String password, int numberPhone, String specialisation) {
-        super(fullame, email, password, numberPhone);
+    public Doctor(String fullame, String email, String password, int numberPhone, Role role, int id, String specialisation) {
+        super(fullame, email, password, numberPhone, role);
         this.id = id;
         this.specialisation = specialisation;
     }
 
-    public Doctor(String fullame, String email, String password, int numberPhone, String specialisation) {
-        super(fullame, email, password, numberPhone);
+    public Doctor(int id, String fullame, String email, String password, int numberPhone, int id1, String specialisation) {
+        super(id, fullame, email, password, numberPhone);
+        this.id = id1;
+        this.specialisation = specialisation;
+    }
+
+    public Doctor(int id, String specialisation) {
+        this.id = id;
         this.specialisation = specialisation;
     }
 
