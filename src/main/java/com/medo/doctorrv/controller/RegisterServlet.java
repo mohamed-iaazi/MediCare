@@ -1,5 +1,6 @@
 package com.medo.doctorrv.controller;
 
+import com.medo.doctorrv.dao.RegisterDao;
 import com.medo.doctorrv.model.Doctor;
 import com.medo.doctorrv.model.Patient;
 import com.medo.doctorrv.model.Role;
@@ -28,15 +29,14 @@ public class RegisterServlet extends HttpServlet {
 
         if (role.equals("Doctor")) {
             String specialization = req.getParameter("specialization");
-            User user=new Doctor();
-
-            Doctor doctor = new Doctor(1,username,password,email,numberPhone,specialization,new Role("Doctor"));
-
-            System.out.println(doctor.getRole().getType());
+            int userId = 1;
+            User doctor = new Doctor( userId,username,email,password,numberPhone,new Role("Doctor"),specialization);
+            RegisterDao.CreateAccount(doctor);
         }
         else {
-            Patient patient=new Patient(1,username,password,email,numberPhone,new Role("Patient"));
-            System.out.println(patient.toString());
+            int userId = 1;
+            User patient=new Patient(userId,username,email,password,numberPhone,new Role("Patient"));
+            RegisterDao.CreateAccount(patient);
         }
 
 

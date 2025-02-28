@@ -3,25 +3,25 @@ package com.medo.doctorrv.model;
 import java.sql.Date;
 
 public class Patient  extends User{
-    private  int id;
+    private  int Patient_id;
 
     public Patient(int id, String fullame, String email, String password, int numberPhone, Role role) {
         super(id, fullame, email, password, numberPhone, role);
     }
 
-    public Patient(int id, String fullame, String email, String password, int numberPhone, Role role, int id1) {
+    public Patient(int id, String fullame, String email, String password, int numberPhone, Role role, int patient_id) {
         super(id, fullame, email, password, numberPhone, role);
-        this.id = id1;
+        Patient_id = patient_id;
     }
 
     public Patient() {
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getPatient_id() {
+        return Patient_id;
 
-    public void setId(int id) {
-        this.id = id;
+    }
+    public void setPatient_id(int patient_id) {
+        Patient_id = patient_id;
     }
 }

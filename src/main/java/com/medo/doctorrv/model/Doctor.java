@@ -5,17 +5,18 @@ import java.util.ArrayList;
 
 public class Doctor extends  User
 {
-    private int id;
+    private int Doctor_id;
     private String specialisation;
 
-    public Doctor(int id, String fullame, String email, String password, int numberPhone,  String specialisation, Role role) {
+
+    public Doctor(int id, String fullame, String email, String password, int numberPhone, Role role, String specialisation) {
         super(id, fullame, email, password, numberPhone, role);
         this.specialisation = specialisation;
     }
 
-    public Doctor(int id, String fullame, String email, String password, int numberPhone, int id1, String specialisation , Role role) {
+    public Doctor(int id, String fullame, String email, String password, int numberPhone, Role role, int doctor_id, String specialisation) {
         super(id, fullame, email, password, numberPhone, role);
-        this.id = id1;
+        Doctor_id = doctor_id;
         this.specialisation = specialisation;
     }
 
@@ -24,13 +25,6 @@ public class Doctor extends  User
 
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getSpecialisation() {
         return specialisation;

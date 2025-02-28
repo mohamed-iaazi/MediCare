@@ -52,6 +52,7 @@
 
                 %>
 
+
                 <section class="btns d-flex justify-content-end w-75">
                     <button class="m-2 rounded-1 btn-signup" >
                         <a id="register" class="nav-link" href="Register.jsp">Register</a>
