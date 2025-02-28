@@ -20,13 +20,5 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String action = req.getParameter("action");
-    switch (action) {
-        case "/insert":
-            System.out.println("do post");
-            break;
-
-    }
-
     }
 }

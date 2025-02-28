@@ -4,12 +4,15 @@ import com.medo.doctorrv.model.Doctor;
 import com.medo.doctorrv.model.Patient;
 import com.medo.doctorrv.model.User;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+
+@WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
     @Override
@@ -23,12 +26,12 @@ public class RegisterServlet extends HttpServlet {
 
         if (role.equals("Doctor")) {
             String specialization = req.getParameter("specialization");
-            Doctor doctor = new Doctor(1,username,password,email,numberPhone,1,specialization);
-
-
+            Doctor doctor = new Doctor(1,username,password,email,numberPhone,specialization);
+            System.out.println(doctor.toString());
         }
         else {
-            Patient patient=new Patient(username,password,email,numberPhone);
+            Patient patient=new Patient(1,username,password,email,numberPhone);
+            System.out.println(patient.toString());
         }
 
 

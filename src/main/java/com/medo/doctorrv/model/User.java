@@ -9,13 +9,7 @@ public abstract class User {
     private  Role role;
 
 
-    public User(String fullame, String email, String password, int numberPhone, Role role) {
-        this.username = fullame;
-        this.email = email;
-        this.password = password;
-        this.numberPhone = numberPhone;
-        this.role = role;
-    }
+
 
     public User(int id, String fullame, String email, String password, int numberPhone) {
         this.id = id;

@@ -175,15 +175,23 @@
 </header>
 
 <section class="back d-block pt-5">
-    <div class="card pt-5 d-block ms-auto me-auto   ">
-        <form  action="login"  method="post">
-            <div class="ms-auto me-auto ">
-                <h1 class="text-center p-1 text-dark">Register</h1>
+    <div class="card pt-2 d-block ms-auto me-auto   ">
+        <form  action="register"  method="post">
+            <div class="ms-auto me-auto  ">
+                <h1 class="text-center p-0 text-dark">Register</h1>
                 <h4 class="text-center h6  text-secondary">DoctorRv</h4>
                 <input required class="mt-3" type="text"  id="username" name="username" aria-describedby="username" placeholder="UserName">
                 <input required class="mt-3" type="email"  id="email" name="email" aria-describedby="email" placeholder="Enter  email">
                 <input  class="mt-3" type="number"  id="numberPhone" name="numberPhone" aria-describedby="numberPhone" placeholder="numberPhone">
                 <input  required  class="mt-3" type="password" id="password" name="password" placeholder="Password">
+                <select onchange="CheckTheRole()" id="role" required class="mt-3 mb-2" name="role">
+                    <option selected disabled> Chose Your Role</option>
+                    <option value="Patient" > Patient</option>
+                    <option  value="Doctor"> Doctor </option>
+                </select>
+                <span class="   text-danger "><small>You should chose Your role first *</small></span>
+                <input  required  class="mt-3 d-none" type="text" id="specialisation" name="specialisation" placeholder="specialisation">
+
             </div>
 
             <button  class="mt-4 me-2 d-block ms-auto me-auto " type="submit">Register</button>
@@ -192,6 +200,28 @@
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function CheckTheRole() {
+      const  role = document.getElementById('role');
+        var selectedValue = role.value;  // Gets the selected value
+        if (selectedValue=="Patient"){
+       console.log("patient")
+            document.getElementById('specialisation').classList.add("d-none");
 
+
+        }
+   else if (selectedValue=="Doctor"){
+            console.log("patient")
+            document.getElementById('specialisation').classList.remove("d-none");
+
+   }
+   else {
+            console.log("Error")
+            document.getElementById('specialisation').classList.add("d-none");
+
+
+        }
+    }
+</script>
 </body>
 </html>
