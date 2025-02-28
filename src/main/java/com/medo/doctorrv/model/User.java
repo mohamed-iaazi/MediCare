@@ -11,12 +11,13 @@ public abstract class User {
 
 
 
-    public User(int id, String fullame, String email, String password, int numberPhone) {
+    public User(int id, String fullame, String email, String password, int numberPhone,Role role) {
         this.id = id;
         this.username = fullame;
         this.email = email;
         this.password = password;
         this.numberPhone = numberPhone;
+        this.role=role;
     }
 
     public User() {

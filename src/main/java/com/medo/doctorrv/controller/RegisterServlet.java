@@ -2,6 +2,7 @@ package com.medo.doctorrv.controller;
 
 import com.medo.doctorrv.model.Doctor;
 import com.medo.doctorrv.model.Patient;
+import com.medo.doctorrv.model.Role;
 import com.medo.doctorrv.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,13 +25,17 @@ public class RegisterServlet extends HttpServlet {
         int numberPhone = Integer.parseInt(req.getParameter("numberPhone"));
         String role = req.getParameter("role");
 
+
         if (role.equals("Doctor")) {
             String specialization = req.getParameter("specialization");
-            Doctor doctor = new Doctor(1,username,password,email,numberPhone,specialization);
-            System.out.println(doctor.toString());
+            User user=new Doctor();
+
+            Doctor doctor = new Doctor(1,username,password,email,numberPhone,specialization,new Role("Doctor"));
+
+            System.out.println(doctor.getRole().getType());
         }
         else {
-            Patient patient=new Patient(1,username,password,email,numberPhone);
+            Patient patient=new Patient(1,username,password,email,numberPhone,new Role("Patient"));
             System.out.println(patient.toString());
         }
 
