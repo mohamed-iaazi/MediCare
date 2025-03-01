@@ -6,7 +6,7 @@ create  table  User (
                         email  varchar(200) unique,
                         password  varchar (200),
                         numberPhone varchar(250) unique
-                        Role ENUM ( "Doctor" , "Patient")
+                        role ENUM ( "Doctor" , "Patient")
 
 
 );

@@ -10,8 +10,8 @@ public class RegisterDao {
 
     static  public  boolean CreateAccount(User user) {
         String INSERT_USER ="insert into user" +
-                            " (username , email ,password , numberPhone) " +
-                           "values (? ,? ,? ,?)";
+                            " (username , email ,password , numberPhone,role) " +
+                           "values (? ,? ,? ,?,?)";
 
       try (Connection connection= DatabaseUtils.geConnection();
            PreparedStatement preparedStatement= connection.prepareStatement(INSERT_USER)) {
@@ -20,7 +20,9 @@ public class RegisterDao {
           preparedStatement.setString(2 ,user.getEmail() );
           preparedStatement.setString(3 ,user.getPassword());
           preparedStatement.setInt(4 ,user.getNumberPhone());
-          preparedStatement.execute();
+          preparedStatement.setString(5 ,user.getRole().getType());
+          System.out.println("dao working  ");
+
           return true;
 
 

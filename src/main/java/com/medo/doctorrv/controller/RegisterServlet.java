@@ -24,15 +24,18 @@ public class RegisterServlet extends HttpServlet {
         String email = req.getParameter("email");
         int numberPhone = Integer.parseInt(req.getParameter("numberPhone"));
         String role = req.getParameter("role");
-
+  System.out.println(role);
 
         if (role.equals("Doctor")) {
+
+            System.out.println("its a doctor");
             String specialization = req.getParameter("specialization");
             int userId = 1;
             User doctor = new Doctor( userId,username,email,password,numberPhone,new Role("Doctor"),specialization);
             RegisterDao.CreateAccount(doctor);
         }
         else {
+            System.out.println("its a patient ");
             int userId = 1;
             User patient=new Patient(userId,username,email,password,numberPhone,new Role("Patient"));
             RegisterDao.CreateAccount(patient);
