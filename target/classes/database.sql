@@ -6,6 +6,7 @@ create  table  User (
                         email  varchar(200) unique,
                         password  varchar (200),
                         numberPhone varchar(250) unique
+                        Role ENUM ( "Doctor" , "Patient")
 
 
 );
@@ -14,7 +15,7 @@ create  table  Docotr (
                           DoctorId int primary key auto_increment,
 
                           id int    ,
-                          specialisation varchar(250)
+                          specialisation varchar(250),
                           foreign key (id) references user(id)
 
 );

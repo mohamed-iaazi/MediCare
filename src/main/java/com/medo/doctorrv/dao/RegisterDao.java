@@ -1,8 +1,7 @@
 package com.medo.doctorrv.dao;
 
-import com.medo.doctorrv.model.Patient;
 import com.medo.doctorrv.model.User;
-import com.medo.doctorrv.utils.ConnectionUtils;
+import com.medo.doctorrv.utils.DatabaseUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +13,7 @@ public class RegisterDao {
                             " (username , email ,password , numberPhone) " +
                            "values (? ,? ,? ,?)";
 
-      try (Connection connection= ConnectionUtils.geConnection();
+      try (Connection connection= DatabaseUtils.geConnection();
            PreparedStatement preparedStatement= connection.prepareStatement(INSERT_USER)) {
 
           preparedStatement.setString(1 , user.getUsername());

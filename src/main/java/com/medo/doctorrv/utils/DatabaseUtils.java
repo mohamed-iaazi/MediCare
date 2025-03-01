@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class ConnectionUtils {
+public class DatabaseUtils {
 
     private  static final String url ="jdbc:mysql://localhost:3306/doctordb?useSSL=false";
     private static final String user="root";

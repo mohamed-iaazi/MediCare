@@ -190,7 +190,8 @@
                     <option  value="Doctor"> Doctor </option>
                 </select>
                 <span class="   text-danger "><small>You should chose Your role first *</small></span>
-                <input  required  class="mt-3 d-none" type="text" id="specialisation" name="specialisation" placeholder="specialisation">
+                <input
+                        class="mt-3 d-none" type="text" id="specialisation" name="specialisation" placeholder="specialisation">
 
             </div>
 
@@ -204,17 +205,22 @@
     function CheckTheRole() {
       const  role = document.getElementById('role');
         var selectedValue = role.value;  // Gets the selected value
-        if (selectedValue=="Patient"){
+        if (selectedValue===
+            "Patient"){
        console.log("patient")
             document.getElementById('specialisation').classList.add("d-none");
+            document.getElementById('specialisation').removeAttribute("required"); // Remove required if hidden
+
 
 
         }
-   else if (selectedValue=="Doctor"){
-            console.log("patient")
+   else if (selectedValue==="Doctor"){
+            console.log("Doctor")
             document.getElementById('specialisation').classList.remove("d-none");
+            document.getElementById('specialisation').setAttribute("required", "true");
 
-   }
+
+        }
    else {
             console.log("Error")
             document.getElementById('specialisation').classList.add("d-none");

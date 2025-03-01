@@ -1,6 +1,6 @@
 package com.medo.doctorrv.dao;
 
-import com.medo.doctorrv.utils.ConnectionUtils;
+import com.medo.doctorrv.utils.DatabaseUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ public class LoginDao {
 
     public  static boolean getUserByUsernameAndPassword(String username , String password) {
 
-            try (Connection connection= ConnectionUtils.geConnection(); PreparedStatement preparedStatement=connection.prepareStatement(SELECT_BY_USER)) {
+            try (Connection connection= DatabaseUtils.geConnection(); PreparedStatement preparedStatement=connection.prepareStatement(SELECT_BY_USER)) {
 
                 preparedStatement.setString(1,username);
 
